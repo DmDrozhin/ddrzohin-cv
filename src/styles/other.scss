@@ -1,0 +1,23 @@
+.article.art > .art__list.list >.list__itm a > span.ok-icon-logo {
+  position: absolute;
+  top: -1px;
+  left: -25px;
+  display: inline-block;
+  background-image: url('@/assets/svg/ok.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  $sz: 24px;
+  width: $sz;
+  height: $sz;
+}
+
+@mixin prev-slct {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+// @include media('min', 'sm') { }
+// @include media('min', 'lg') { }

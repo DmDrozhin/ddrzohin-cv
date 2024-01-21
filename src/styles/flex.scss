@@ -1,0 +1,109 @@
+// flex row
+@mixin fr {
+  display: flex;
+  flex-direction: row;
+}
+// jc space between
+@mixin fr-sb {
+  @include fr;
+  justify-content: space-between;
+}
+@mixin fr-sb-c {
+  @include fr-sb;
+  align-items: center;
+}
+// jc start
+@mixin fr-st {
+  @include fr;
+  justify-content: flex-start;
+}
+@mixin fr-st-c {
+  @include fr-st;
+  align-items: center;
+}
+// jc end
+@mixin fr-nd {
+  @include fr;
+  justify-content: flex-end;
+}
+@mixin fr-nd-c {
+  @include fr-nd;
+  align-items: center;
+}
+// jc evenly
+@mixin fr-ev {
+  @include fr;
+  justify-content: space-evenly;
+}
+@mixin fr-ev-c {
+  @include fr-ev;
+  align-items: center;
+}
+// jc around
+@mixin fr-ar {
+  @include fr;
+  justify-content: space-around;
+}
+@mixin fr-ar-c {
+  @include fr;
+  justify-content: space-around;
+  align-items: center;
+}
+// js center
+@mixin fr-c-c {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// Flex Column
+@mixin fc {
+  display: flex;
+  flex-direction: column;
+}
+@mixin fcr {
+  display: flex;
+  flex-direction: column-reverse;
+}
+// js space-between
+@mixin fc-sb {
+  @include fc;
+  justify-content: space-between;
+}
+@mixin fc-sb-st {
+  @include fc-sb;
+  align-items: flex-start;
+}
+@mixin fc-sb-c {
+  @include fc-sb;
+  align-items: center;
+}
+// js start
+@mixin fc-st {
+  @include fc;
+  justify-content: flex-start;
+}
+@mixin fc-st-st {
+  @include fc-st;
+  align-items: flex-start;
+}
+@mixin fc-st-c {
+  @include fc-st;
+  align-items: center;
+}
+// jc center
+@mixin fc-c {
+  @include fc;
+  justify-content: center;
+}
+@mixin fc-c-st {
+  @include fc-c;
+  align-items: flex-start;
+}
+
+
+
+// @include media('min', 'sm') { }
+// @include media('min', 'lg') { }

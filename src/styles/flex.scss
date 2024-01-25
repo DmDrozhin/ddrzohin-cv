@@ -1,4 +1,4 @@
-// flex row
+// FLEX ROW ****************
 @mixin fr {
   display: flex;
   flex-direction: row;
@@ -8,6 +8,7 @@
   @include fr;
   justify-content: space-between;
 }
+// jc space between center
 @mixin fr-sb-c {
   @include fr-sb;
   align-items: center;
@@ -17,6 +18,7 @@
   @include fr;
   justify-content: flex-start;
 }
+// jc start center
 @mixin fr-st-c {
   @include fr-st;
   align-items: center;
@@ -26,6 +28,7 @@
   @include fr;
   justify-content: flex-end;
 }
+// jc end center
 @mixin fr-nd-c {
   @include fr-nd;
   align-items: center;
@@ -35,6 +38,7 @@
   @include fr;
   justify-content: space-evenly;
 }
+// jc evenly center
 @mixin fr-ev-c {
   @include fr-ev;
   align-items: center;
@@ -44,21 +48,34 @@
   @include fr;
   justify-content: space-around;
 }
+// js around center
 @mixin fr-ar-c {
   @include fr;
   justify-content: space-around;
   align-items: center;
 }
 // js center
+@mixin fr-c {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+// js center center
 @mixin fr-c-c {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+// js stretch
+@mixin fr-ch {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
 
 
-// Flex Column
+// FLEX COLUMN *******************
 @mixin fc {
   display: flex;
   flex-direction: column;

@@ -6,7 +6,6 @@
 @import '@/styles/other.scss';
 
 
-
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,6 +14,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 html {
@@ -29,4 +29,5 @@ body {
   // mobile viewport bug fix */
   height: -webkit-fill-available;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }

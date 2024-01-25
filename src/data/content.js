@@ -1,7 +1,7 @@
 let work = [
   {
     job: 'Web E_commerce Developer',
-    comp: 'okdveri',
+    comp: 'OkDveri',
     period: '02.2019 - present',
     text: [
       'Serving as a web e-commerce developer for over 3 years in the retail sector. </br> Proficient with Vue.js framework, native JavaScript, responsive web design. </br> Notable achievements include boosting the conversion rate of the shop with improved layout of product page based on sales experience and user preference analytics',
@@ -10,7 +10,7 @@ let work = [
 
       'Developed website layout, application and functions layout',
 
-      'Design SEO adjusted textual and graphical content, including product illustrations for the retail website <a href="https://okdveri.com.ua" style="position: relative; left: 25px; "><span class="ok-icon-logo"></span>okdveri.com.ua</a>',
+      'Design SEO adjusted textual and graphical content, including product illustrations for the retail website <a href="https://okdveri.com.ua" style="position: relative; left: 0px; "><span class="ok-icon-logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> okdveri.com.ua</a>',
 
       'Implemented the conception for products representation, products tree, variations, attributes, metadata, that helped to increase sells',
 

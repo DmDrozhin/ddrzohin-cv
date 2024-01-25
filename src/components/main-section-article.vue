@@ -22,15 +22,14 @@
 export default {
   name: 'main-section-article',
   props: { data: { type: Object } },
-  computed: {
-    
-  }
+  computed: { }
 }
 </script>
 
 <style lang="scss" scoped>
 .article,.art {
   margin-bottom: 24px;
+  padding-right: 5px;
   &__comp {
     font-size: 16px;
     color: $grey-95;
@@ -41,8 +40,9 @@ export default {
   &__wrap {
     @include fr-sb-c;
     margin-bottom: 0px;
-    padding-left: 20px;
-    padding-right: 55px;
+    @include media('min', 'xs') { padding: 10px 5px 10px 22px; }
+    @include media('min', 'md') { padding: 0 0 0 22px; }
+    @include media('min', 'lg') { padding: 0 55px 0 22px; }
   }
   &__job {
     font-size: 20px;
@@ -51,8 +51,10 @@ export default {
     font-weight: 400;
   }
   &__period {
-    font-size: 20px;
     color: $green-end;
+    @include media('min', 'xs') { font-size: 16px; }
+    @include media('min', 'sm') { font-size: 18px; }
+    @include media('min', 'md') { font-size: 20px; }
   }
   &__list, .list {
     &__itm {
@@ -60,7 +62,7 @@ export default {
       position: relative;
       font-size: 14px;
       margin-bottom: 4px;
-
+      word-break: break-word;
     }
     &__itm::before {
       content: '';

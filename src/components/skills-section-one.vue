@@ -1,51 +1,44 @@
 <template>
   <div class="skills-section-one one">
     <div class="one__bg"></div>
-      <skills-title-skills class="one__title"></skills-title-skills>
-      <skill-item-vue class="one__item-t1 vue"></skill-item-vue>
+    
+    <div class="one__wrap">
+      <title1 class="one__title" /> 
+    </div>
+
+      <vue class="one__it-1 vue shake" ref="vue" />
       <div class="one__wrap">
-        <skill-item-webpack class="one__item-t2 wp "></skill-item-webpack>
-        <skill-item-js class="one__item-t2 js"></skill-item-js>
-        <skill-item-node class="one__item-t2 node"></skill-item-node>
-      </div>
-      <skill-item-html-css class="one__item-t1 html"></skill-item-html-css>
-      <div class="one__wrap">
-        <skill-item-w-press class="one__item-t2 w-press"></skill-item-w-press>
-        <skill-item-elementor class="one__item-t2 elementor"></skill-item-elementor>
-        <skill-item-w-comm class="one__item-t2 w-comm"></skill-item-w-comm>
-      </div>
-      <skill-item-corel class="one__item-t1 corel"></skill-item-corel>
-      <div class="one__wrap">
-        <skill-item-figma class="one__item-t2 figma"></skill-item-figma>
+        <wpack class="one__it-2" />
+        <js class="one__it-2 js" />
+        <node class="one__it-2" />
       </div>
 
+      <htmlCss class="one__it-1 html" />
+      <div class="one__wrap">
+        <wpress class="one__it-2" />
+        <elemntr class="one__it-2"/>
+        <wcomm class="one__it-2"/>
+      </div>
 
+      <corel class="one__it-1 corel"/>
+      <div class="one__wrap">
+        <figma class="one__it-2"/>
+      </div>
     </div>
   
 </template>
 
 <script>
-import skillsTitleSkills from './skills/skills-title-skills.vue'
-import skillItemVue from '../components/skills/skill-item-vue.vue'
-import skillItemWebpack from './skills/skill-item-webpack.vue'
-import skillItemJs from './skills/skill-item-js.vue'
-import skillItemNode from './skills/skill-item-node.vue'
-import skillItemWPress from './skills/skill-item-w-press.vue'
-import skillItemElementor from './skills/skill-item-elementor.vue'
-import skillItemWComm from './skills/skill-item-w-comm.vue'
-import skillItemFigma from './skills/skill-item-figma.vue'
-import skillItemCorel from './skills/skill-item-corel-draw.vue'
-import skillItemHtmlCss from './skills/skill-item-html-css.vue'
+import * as skills from '@/components/skills/index.js'
 export default {
   name: 'skills-section-one',
-  components: { skillsTitleSkills, skillItemVue, skillItemWebpack, skillItemJs, skillItemNode, skillItemWPress, skillItemElementor, skillItemWComm, skillItemFigma, skillItemCorel, skillItemHtmlCss },
+  components: { ...skills },
 }
 </script>
 
 <style lang="scss" scoped>
 .skills-section-one, .one {
-  flex: 0 0 214px;
-  // height: 50%;
+  flex: 1;
   display: flex;
   display: grid;
   padding-bottom: 10px;
@@ -53,7 +46,7 @@ export default {
   // border: 1px dotted lightcoral;
   &__bg {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     right: 0;
     bottom: 0;    
@@ -72,21 +65,23 @@ export default {
   &__title {
     margin-top: 15px;
     margin-left: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
-  &__item-t1.vue {
-    margin-bottom: -8px;
-  }
-  &__item-t1.html {
-    margin-top: -8px;
-    margin-bottom: -8px;
-  }
-  &__item-t1.corel {
-    margin-top: -8px;
-    margin-bottom: -8px;
-  }
-  &__item-t2 {
-    margin-bottom: 6px;
-  }
+  &__it-1.vue { margin-bottom: -8px; }
+  &__it-1.html { margin: -8px 0; }
+  &__it-1.corel { margin: -8px 0; }
+  &__it-2 { margin-bottom: 6px; }
+
+  
+}
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+}
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
 }
 </style>

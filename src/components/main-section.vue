@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <section class="main">
     <div class="main__wrap-1">
       <div class="main__t t">
         <div class="t__lit"><span>W</span></div>
@@ -25,7 +25,7 @@
       </div>
     </div>
     
-  </div>
+  </section>
 </template>
 
 <script>
@@ -49,12 +49,14 @@ export default {
 .main {
   flex: 1;
   padding-top: 25px;
-  min-height: 800px;
+  // min-height: 800px;
   &__wrap-1 {
-    height: inherit;
-    margin-left: 18px;
-    // border: 1px solid rgb(252, 0, 130);
+    // height: inherit;
     text-align: left;
+    @include media('min', 'xs') { margin: 0 10px 0 10px;}
+    // @include media('min', 'sm') { }
+    // @include media('min', 'md') { }
+    @include media('min', 'lg') { margin: 0 0 0 18px; }
   }
   &__t, .t {
     @include fr-st;
@@ -89,6 +91,10 @@ export default {
     height: inherit;
     margin-left: 22px;
     // border: 0.5px solid lawngreen;
+    @include media('min', 'xs') { margin: 0 0 0 5px; }
+    @include media('min', 'sm') { margin: 0 0 0 10px; }
+    @include media('min', 'md') { margin: 0 0 0 16px; }
+    @include media('min', 'lg') { margin: 0 0 0 22px; }
   }
 }
 </style>

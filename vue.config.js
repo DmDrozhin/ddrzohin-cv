@@ -20,7 +20,8 @@ module.exports = defineConfig({
         // https://github.com/vuejs/vue-cli/pull/7443
         __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
       })
-    ]
+    ],
+    
   },
   chainWebpack: config => {
     config.plugin('html').tap(args => {

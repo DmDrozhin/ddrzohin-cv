@@ -10,9 +10,10 @@
     <ul class="art__list list">
       <li 
         class="list__itm"
-        v-for="it in data.text"
+        v-for="it, idx in data.text"
         :key="it.id"
         v-html="it"
+        :class="{ 'first': idx === 0 }"
       ></li>
     </ul>
   </div>
@@ -71,21 +72,28 @@ export default {
       $sz: 8px;
       width: $sz;
       height: $sz;
-      top: 5px;
+      top: 7px;
       left: 0;
       border-radius: 50%;
       background-color: $grey-66;
-      border: 2px solid $light;
       transition: all 0.3s ease-out;
+      outline-offset: 2px;
     }
-    &__itm:hover {
-      background-color: #f0f2ed;
-    }
-    &__itm:hover::before {
+    &__itm.first::before {
       background-color: $green-md;
-      border: 2px solid $light;
       outline: 1px solid $green-md;
     }
+    // &__itm:hover {
+      //   background-color: #f0f2ed;
+      // }
+      &__itm:hover::before {
+        // background-color: $green-md;
+        outline: 1px solid $grey-66;
+      }
+      &__itm.first:hover::before {
+        outline-offset: 3px;
+        outline: 1px solid $green-md;
+      }
   }
 }
 </style>

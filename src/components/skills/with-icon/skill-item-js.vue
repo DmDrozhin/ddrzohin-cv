@@ -1,7 +1,7 @@
 <template>
     <div class="skill js">
       <div class="js__bg">
-        <span class="js__txt">JavaScript</span>
+        <span class="js__txt">JavaScript (ES6+)</span>
       </div>
     </div>
 </template>

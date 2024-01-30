@@ -2,7 +2,7 @@
   <button class="git contact"
     @click="this.$emit('clicked')"
   >
-    <a class="contact__link" href="https://github.com/DmDrozhin">
+    <a class="contact__link" href="https://github.com/DmDrozhin" rel="nofollow">
       <div class="contact__icon"></div>
       <p class="contact__txt">DmDrozhin</p>
     </a>
@@ -23,5 +23,9 @@ export default {
     background-image: url('@/assets/svg/github.svg');
     // background-position-y: 1px; // *** ICON POSITION ***
   }
+  // position: absolute;
+  // inset: 0;
+  // margin: auto;
 }
 </style>
+

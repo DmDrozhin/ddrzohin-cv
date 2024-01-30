@@ -3,8 +3,7 @@
 	src: url('@/assets/fonts/SegoeUI.eot');
 	src: local('Segoe UI'), local('SegoeUI'),
 		url('@/assets/fonts/SegoeUI.eot?#iefix') format('embedded-opentype'),
-		url('@/assets/fonts/SegoeUI.woff') format('woff'),
-		url('@/assets/fonts/SegoeUI.ttf') format('truetype');
+		url('@/assets/fonts/SegoeUI.woff') format('woff');
   font-display: swap;
 	font-weight: normal;
 	font-style: normal;
@@ -14,8 +13,7 @@
 	src: url('@/assets/fonts/SegoeUI-SemiBold.eot');
 	src: local('Segoe UI Semibold'), local('SegoeUI-SemiBold'),
 		url('@/assets/fonts/SegoeUI-SemiBold.eot?#iefix') format('embedded-opentype'),
-		url('@/assets/fonts/SegoeUI-SemiBold.woff') format('woff'),
-		url('@/assets/fonts/SegoeUI-SemiBold.ttf') format('truetype');
+		url('@/assets/fonts/SegoeUI-SemiBold.woff') format('woff');
 	font-weight: 600;
 	font-style: normal;
 }

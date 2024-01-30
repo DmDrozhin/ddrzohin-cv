@@ -3,11 +3,12 @@
     <div class="my-cv__container" ref="cv">
       <head-section 
         @clicked="toggle"
+        @lang="this.lang = $event"
         :isOpen="isOpen"
         :isMenu="isMenu"
       />
       <div class="my-cv__main">
-        <main-section />
+        <main-section :lang="lang" />
 
           <transition name="modal">
             <modal 
@@ -43,8 +44,12 @@ export default {
     return {
       ro: null,
       isOpen: false,
-      isMenu: null
+      isMenu: null,
+      lang: 'en'
     }
+  },
+  computed: {
+    el() { return this.$refs.cv }
   },
   methods: {
     toggle() { this.isOpen = !this.isOpen },
@@ -54,17 +59,17 @@ export default {
       if (!w) this.isOpen = false
     },
     onResize() {
-      const el = this.$refs.cv.offsetWidth
-      el < 768 ? this.atResize(0) : this.atResize(1)
+      const w = this.el.offsetWidth
+      w < 768 ? this.atResize(0) : this.atResize(1)
       // console.log(el)
     }
   },
   mounted() {
     this.ro = new ResizeObserver(this.onResize)
-    this.ro.observe(this.$refs.cv)
+    this.ro.observe(this.el)
   },
   beforeDestroy () {
-    this.ro.unobserve(this.$refs.cv)
+    this.ro.unobserve(this.el)
   }
 }
 
@@ -86,7 +91,7 @@ export default {
   &__main {
     position: relative;
     @include fr;
-    background-color: #f8f8f8;
+    background-color: $bg-2;
     @include media('min', 'xs') {
       padding: 0 20px 0 20px;
     }

@@ -2,7 +2,7 @@
   <button class="phone contact"
     @click="this.$emit('clicked')"
   >
-    <a class="contact__link" href="tel:+380952856434">
+    <a class="contact__link" href="tel:+380952856434" rel="nofollow">
       <div class="contact__icon"></div>
       <p class="contact__txt">+38 095 285 64 34</p>
     </a>

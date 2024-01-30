@@ -30,17 +30,19 @@
 
 <script>
 import mainSectionArticle from './main-section-article.vue'
-import { work, education } from '../data/content.js'
+import { workEn, educationEn } from '@/data/content-en.js'
+import { workUa, educationUa } from '@/data/content-ua.js'
 export default {
   name: 'main-section',
   components: { mainSectionArticle },
+  props: { lang: { type: String, default: 'en' } },
   data() {
     return {
     }
   },
   computed: {
-    cvData() { return work },
-    cvEducation() { return education }
+    cvData() { return this.lang === 'en' ? workEn : workUa },
+    cvEducation() { return this.lang === 'en' ? educationEn : educationUa }
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="contacts cont">
 
-    <button class="cont__burger" 
+    <button class="cont__burger" aria-label="open or close contacts button"
       :style="{ backgroundImage: `url(${icon})` }"
       @click="toggle"
     ></button>

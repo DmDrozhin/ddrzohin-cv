@@ -1,18 +1,50 @@
 <template>
   <section class="header">
-
+    <head-section-radio-btn class="header__radio" @lang="setLang($event)" />
       <div class="header__wrap">
 
         <div class="header__s1 s1">
           <div class="s1__photo">
-            <img src="@/assets/imgs/my-photo.webp" alt="Dmitry Drozhin photo">
-          </div>
+            <!-- <img src="@/assets/imgs/my-photo-640.webp" alt="Dmitry Drozhin photo"> -->
+            <picture>
+              <source media="(max-width: 576px)" 
+                srcset="
+                  @/assets/imgs/my-photo-403-1x.webp 1x,
+                  @/assets/imgs/my-photo-403-2x.webp 2x,
+                  @/assets/imgs/my-photo-403-3x.webp 3x"
+                type="image/webp"
+              >
+              <source media="(max-width: 768px)" 
+                srcset="
+                  @/assets/imgs/my-photo-380-1x.webp 1x,
+                  @/assets/imgs/my-photo-380-2x.webp 2x,
+                  @/assets/imgs/my-photo-380-3x.webp 3x"
+                type="image/webp"
+              >
+              <source media="(max-width: 992px)"
+                srcset="
+                  @/assets/imgs/my-photo-188-1x.webp 1x,
+                  @/assets/imgs/my-photo-188-2x.webp 2x,
+                  @/assets/imgs/my-photo-188-3x.webp 3x"
+                type="image/webp"
+              >
+              <source media="(min-width: 993px)"
+                srcset="
+                  @/assets/imgs/my-photo-157-1x.webp 1x,
+                  @/assets/imgs/my-photo-157-2x.webp 2x,
+                  @/assets/imgs/my-photo-157-3x.webp 3x"
+                type="image/webp"
+              >
+              <img src="@/assets/imgs/my-photo-640.webp" alt="Dmitry Drozhin photo">
+            </picture>
+            </div>
+            <!-- sizes="(min-width: 0px) 0px, (min-width: 768px) 768px, (min-width: 992) 992px" -->
         </div>
   
         <div class="header__s2 s2">
           <hgroup class="s2__title title">
-            <h1 class="title__name">{{ name }}</h1>
-            <p class="title__job">{{ position }}</p>
+            <h1 class="title__name">{{ cvPerson.name }}</h1>
+            <p class="title__job">{{ cvPerson.job }}</p>
           </hgroup>
         </div>
 
@@ -23,7 +55,7 @@
       </div>
     
     <div class="header__divider divider">
-      <button class="divider__button button" @click="handle" ref="arrow">
+      <button class="divider__button button" @click="handle" ref="arrow" aria-label="show or hide skills button">
         <span :class="{ rotate: isOpen }"></span>
       </button>
     </div>
@@ -32,20 +64,30 @@
 
 <script>
 import headSectionContacts from '@/components/head-section-contacts.vue'
+import headSectionRadioBtn from '@/components/head-section-radio-btn.vue'
+import { personEn } from '@/data/content-en.js'
+import { personUa } from '../data/content-ua.js'
 export default {
   name: 'head-section',
-  components: { headSectionContacts },
+  components: { headSectionContacts, headSectionRadioBtn },
   props: { isOpen: { type: Boolean, default: true }, isMenu: { type: Number } },
   data() {
     return{
       name: 'Dmitriy Drozhzhin',
       position: 'Frontend Developer (Vue.js)',
       isSkills: true,
-      
+      lang: 'en'
     }
   },
+  computed: {
+    cvPerson() { return this.lang === 'en' ? personEn : personUa },
+  },
   methods: {
-    handle() { this.$emit('clicked') }
+    handle() { this.$emit('clicked') },
+    setLang(ev) {
+      this.lang = ev
+      this.$emit('lang', ev)
+    }
   }
 }
 </script>
@@ -58,6 +100,16 @@ export default {
     margin: 0 auto;
     @include media('min', 'xs') { padding-top: 25px; }
     @include media('min', 'md') { padding-top: 0px; }
+    position: relative;
+
+    &__radio {
+      position: absolute;
+      top: 10px;
+      @include media('min', 'xs') { right: 3%; }
+      @include media('min', 'md') { right: 30%; }
+      @include media('min', 'lg') { right: 25%; }
+      // border: 0.5px solid rgb(165, 165, 23);
+    }
 
     &__wrap {
       display: grid;

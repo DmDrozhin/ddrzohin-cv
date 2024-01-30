@@ -2,7 +2,7 @@
   <button class="telega contact"
     @click="this.$emit('clicked')"
   >
-    <a class="contact__link" href="https://t.me/DDrozhin">
+    <a class="contact__link" href="https://t.me/DDrozhin" rel="nofollow">
       <div class="contact__icon"></div>
       <p class="contact__txt">@DDrozhin &nbsp;</p>
     </a>

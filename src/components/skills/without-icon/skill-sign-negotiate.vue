@@ -1,7 +1,7 @@
 <template>
     <div class="skill negotiate">
       <div class="negotiate__bg">
-        <span class="negotiate__txt">Vendor Negotiating</span>
+        <span class="negotiate__txt">{{ txt }}</span>
       </div>
     </div>
 </template>
@@ -9,6 +9,12 @@
 <script>
 export default {
   name: 'skill-vendor-negotiating',
+  props: { txt: { type: String } },
+  data() {
+    return {
+      text: 'Vendor Negotiating'
+    }
+  }
 }
 </script>
 

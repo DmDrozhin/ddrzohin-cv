@@ -25,7 +25,7 @@ module.exports = defineConfig({
   },
   chainWebpack: config => {
     config.plugin('html').tap(args => {
-        args[0].title = 'Dmitry Drozhin CV (Vue)'
+        args[0].title = 'Dmitry Drozhin - Frontend developer (Vue)'
         return args
     })
   }

@@ -1,7 +1,7 @@
 <template>
     <div class="skill workflow">
       <div class="workflow__bg">
-        <span class="workflow__txt">Workflow Planning</span>
+        <span class="workflow__txt">{{ txt }}</span>
       </div>
     </div>
 </template>
@@ -9,6 +9,12 @@
 <script>
 export default {
   name: 'skill-workflow-planning',
+  props: { txt: { type: String } },
+  data() {
+    return {
+      text: 'Workflow Planning'
+    }
+  }
 }
 </script>
 

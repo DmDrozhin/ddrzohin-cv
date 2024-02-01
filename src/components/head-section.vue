@@ -43,8 +43,8 @@
   
         <div class="header__s2 s2">
           <hgroup class="s2__title title">
-            <h1 class="title__name">{{ cvPerson.name }}</h1>
-            <p class="title__job">{{ cvPerson.job }}</p>
+            <h1 class="title__name">{{ curr.person.name }}</h1>
+            <p class="title__job">{{ curr.person.job }}</p>
           </hgroup>
         </div>
 
@@ -65,8 +65,8 @@
 <script>
 import headSectionContacts from '@/components/head-section-contacts.vue'
 import headSectionRadioBtn from '@/components/head-section-radio-btn.vue'
-import { personEn } from '@/data/content-en.js'
-import { personUa } from '../data/content-ua.js'
+import * as En from '@/data/content-en.js'
+import * as Ua from '../data/content-ua.js'
 export default {
   name: 'head-section',
   components: { headSectionContacts, headSectionRadioBtn },
@@ -80,7 +80,7 @@ export default {
     }
   },
   computed: {
-    cvPerson() { return this.lang === 'en' ? personEn : personUa },
+    curr() { return this.lang === 'en' ? En : Ua }
   },
   methods: {
     handle() { this.$emit('clicked') },

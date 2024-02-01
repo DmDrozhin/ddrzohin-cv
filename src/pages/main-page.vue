@@ -21,7 +21,8 @@
           <transition name="slide-rtl">
             <aside-section
               class="my-cv__aside" 
-              v-show="isOpen" 
+              v-show="isOpen"
+              :lang="lang"
             />
           </transition>
 
@@ -98,7 +99,8 @@ export default {
   }
   &__aside {
       // border: 0.5px dotted yellow;
-    @include fc-sb;
+      margin-top: 5px;
+    @include fc-st;
     gap: 4px;
     @include media('min', 'xs') {
       // height: 100%;

@@ -29,6 +29,7 @@ export default {
     position: relative;
     @include media('min', 'xs') { font-size: 22px; }
     @include media('min', 'md') { font-size: 14px; }
+    cursor: pointer;
   }
   & input:checked + label {
     color: $green-end;

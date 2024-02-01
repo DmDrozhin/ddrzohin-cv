@@ -1,7 +1,7 @@
 <template>
     <div class="skill attention">
       <div class="attention__bg">
-        <span class="attention__txt">Attention to details</span>
+        <span class="attention__txt">{{ txt }}</span>
       </div>
     </div>
 </template>
@@ -9,6 +9,12 @@
 <script>
 export default {
   name: 'skill-attention-to-details',
+  props: { txt: { type: String } },
+  data() {
+    return {
+      text: 'Attention to details'
+    }
+  }
 }
 </script>
 

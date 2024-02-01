@@ -5,13 +5,14 @@
         <span class="char__char">{{ char }}</span>
       </div>
     </div>
-    <h2 class="lang__txt">{{ text }}</h2>
+    <h2 class="lang__txt">{{ txt }}</h2>
   </div>
 </template>
 
 <script>
 export default {
   name: 'skills-title-languages',
+  props: { txt: { type: String } },
   data() {
     return {
       char: 'L',

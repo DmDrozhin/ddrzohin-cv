@@ -3,22 +3,22 @@
     <div class="main__wrap-1">
       <div class="main__t t">
         <div class="t__lit"><span>W</span></div>
-        <h2 class="t__tit">WORK EXPERIENCE</h2>
+        <h2 class="t__tit">{{ curr.titles[0] }}</h2>
       </div>
       <div class="main__wrap-2">
         <main-section-article
-          v-for="it in cvData"
+          v-for="it in curr.work"
           :key="it.id"
           :data="it"
         ></main-section-article>
       </div>
       <div class="main__t t">
         <div class="t__lit"><span class="lit-e">E</span></div>
-        <h2 class="t__tit">EDUCATION</h2>
+        <h2 class="t__tit">{{ curr.titles[1] }}</h2>
       </div>
       <div class="main__wrap-2">
         <main-section-article
-          v-for="it in cvEducation"
+          v-for="it in curr.education"
           :key="it.id"
           :data="it"
         ></main-section-article>
@@ -30,8 +30,9 @@
 
 <script>
 import mainSectionArticle from './main-section-article.vue'
-import { workEn, educationEn } from '@/data/content-en.js'
-import { workUa, educationUa } from '@/data/content-ua.js'
+import * as En from '@/data/content-en.js'
+import * as Ua from '@/data/content-ua.js'
+
 export default {
   name: 'main-section',
   components: { mainSectionArticle },
@@ -41,8 +42,7 @@ export default {
     }
   },
   computed: {
-    cvData() { return this.lang === 'en' ? workEn : workUa },
-    cvEducation() { return this.lang === 'en' ? educationEn : educationUa }
+    curr() { return this.lang === 'en' ? En : Ua }
   }
 }
 </script>

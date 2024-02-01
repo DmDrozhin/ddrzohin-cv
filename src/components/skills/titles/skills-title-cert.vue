@@ -5,13 +5,14 @@
         <span class="char__char">{{ char }}</span>
       </div>
     </div>
-    <h2 class="cert__txt">{{ text }}</h2>
+    <h2 class="cert__txt">{{ txt }}</h2>
   </div>
 </template>
 
 <script>
 export default {
   name: 'skills-title-certificates',
+  props: { txt: { type: String } },
   data() {
     return {
       char: 'C',

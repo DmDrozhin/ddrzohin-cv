@@ -3,7 +3,7 @@
     <div class="one__bg"></div>
     
     <div class="one__wrap">
-      <title1 class="one__title" /> 
+      <title1 class="one__title" :txt="curr.titles[2]" />
     </div>
 
       <vue class="one__it-1 vue shake" ref="vue" />
@@ -30,15 +30,21 @@
 
 <script>
 import * as skills from '@/components/skills/index.js'
+import * as En from '@/data/content-en.js'
+import * as Ua from '@/data/content-ua.js'
 export default {
   name: 'skills-section-one',
   components: { ...skills },
+  props: { lang: { type: String, default: 'en' } },
+  computed: {
+    curr() { return this.lang === 'en' ? En : Ua }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .skills-section-one, .one {
-  flex: 1;
+  // flex: 1;
   display: flex;
   display: grid;
   padding-bottom: 10px;

@@ -1,10 +1,14 @@
 <template>
     <div class="skill wrap">
       <div class="ethic-bg">
-        <span class="ethic-txt">Work Ethic</span>
+        <span class="ethic-txt">
+          {{ txt1 }}
+        </span>
       </div>
       <div class="discipline-bg">
-        <span class="discipline-txt">Discipline</span>
+        <span class="discipline-txt">
+          {{ txt2 }}
+        </span>
       </div>
     </div>
 </template>
@@ -12,6 +16,13 @@
 <script>
 export default {
   name: 'skill-work-ethic',
+  props: { txt1: { type: String }, txt2: { type: String } },
+  data() {
+    return {
+      text1: 'Work Ethic',
+      text2: 'Discipline'
+    }
+  }
 }
 </script>
 

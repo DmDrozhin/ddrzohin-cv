@@ -1,7 +1,7 @@
 <template>
   <section>
-    <skills-section-one></skills-section-one>
-    <skills-section-two></skills-section-two>
+    <skills-section-one :lang="lang" />
+    <skills-section-two :lang="lang" />
   </section>
 </template>
 
@@ -12,6 +12,7 @@ import skillsSectionTwo from './skills-section-two.vue'
 export default {
   name: 'main-section-aside',
   components: { skillsSectionOne, skillsSectionTwo },
+  props: { lang: { type: String, default: 'en' } },
 }
 </script>
 

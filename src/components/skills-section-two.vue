@@ -2,14 +2,14 @@
   <div class="skills-section-one two">
     <div class="two__bg"></div>
       <div class="two__wrap">
-        <soft1 class="two__it-2" />
-        <soft2 class="two__it-2" />
-        <soft3 class="two__it-2" />
-        <soft4 class="two__it-2" />
-        <soft5 class="two__it-2" />
+        <soft1 class="two__it-2" :txt="curr.skills[0]"/>
+        <soft2 class="two__it-2" :txt="curr.skills[1]"/>
+        <soft3 class="two__it-2" :txt="curr.skills[2]"/>
+        <soft4 class="two__it-2" :txt1="curr.skills[3]" :txt2="curr.skills[4]" />
+        <soft5 class="two__it-2" :txt="curr.skills[5]"/>
       </div>
 
-      <title2 class="two__title" />
+      <title2 class="two__title" :txt="curr.titles[3]" />
       <div class="two__wrap">
         <course1 class="two__it-3" />
         <course2 class="two__it-3" />
@@ -17,7 +17,7 @@
         <course4 class="two__it-3" />
       </div>
 
-      <title3 class="two__title" />
+      <title3 class="two__title" :txt="curr.titles[4]" />
       <div class="two__wrap">
         <p class="two__lang">English • work proficiency</p>
         <p class="two__lang">Ukrainian, Russian • native</p>
@@ -27,19 +27,25 @@
 
 <script>
 import * as skills from '@/components/skills/index.js'
+import * as En from '@/data/content-en.js'
+import * as Ua from '@/data/content-ua.js'
 
 export default {
   name: 'skills-section-one',
   components: { ...skills },
+  props: { lang: { type: String, default: 'en' } },
+  computed: {
+    curr() { return this.lang === 'en' ? En : Ua }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .skills-section-two, .two {
   // @include media('min', 'xs') { display: block; width: 214px;}
-  @include media('min', 'md') { flex: 1 0 214px; }
+  // @include media('min', 'md') { flex: 0 0 214px; }
   
-  flex: 1;
+  // flex: 1;
   display: grid;
   position: relative;
   padding: 6px 0 6px 0;
